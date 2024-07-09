@@ -16,7 +16,7 @@ public class AuthenticationController {
     @Autowired
     private AuthService authService;
 
-    @PostMapping("/client/signup")
+    @PostMapping("/client/sign-up")
     public ResponseEntity<?> signupClient(@RequestBody SignupRequestDTO signupRequestDTO) {
         if (authService.presentByEmail(signupRequestDTO.getEmail())) {
             return new ResponseEntity<>("Usuário já cadastrado com este email!", HttpStatus.NOT_ACCEPTABLE);
@@ -26,7 +26,7 @@ public class AuthenticationController {
         return new ResponseEntity<>(createdUser, HttpStatus.OK);
     }
 
-    @PostMapping("/company/signup")
+    @PostMapping("/company/sign-up")
     public ResponseEntity<?> signupCompany(@RequestBody SignupRequestDTO signupRequestDTO) {
         if (authService.presentByEmail(signupRequestDTO.getEmail())) {
             return new ResponseEntity<>("Empresa já cadastrada com este email!", HttpStatus.NOT_ACCEPTABLE);
