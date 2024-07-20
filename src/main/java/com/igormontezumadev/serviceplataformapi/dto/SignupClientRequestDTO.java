@@ -3,7 +3,7 @@ package com.igormontezumadev.serviceplataformapi.dto;
 import lombok.Data;
 
 @Data
-public class SignupRequestDTO {
+public class SignupClientRequestDTO {
 
     private String email;
     private String password;
